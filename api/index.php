@@ -8,7 +8,6 @@ use Symfony\Component\Routing\Loader\YamlFileLoader;
 use Symfony\Component\Routing\RouteCollection;
 use Silex\Application;
 
-
 $app = new Silex\Application();
 $app['debug'] = true;
 
@@ -26,31 +25,5 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
         'path'   => __DIR__ . '/db/app.db.sqlite',
     ),
 ));
-/*
-$app->mount('/message', new Message\MessageControllerProvider());$app->run();die();
-
-$app->get('/message', function () use ($app) {
-    return new JsonResponse($app['db']->fetchAll("SELECT * FROM messages"));
-});
-
-$app->get('/message/{id}', function ($id) use ($app) {
-    return new JsonResponse($app['db']->fetchAssoc("SELECT * FROM messages WHERE id=:ID", ['ID' => $id]));
-});
-
-$app->delete('/message/{id}', function ($id) use ($app) {
-    return $app['db']->delete('messages', ['ID' => $id]);
-});
-
-$app->post('/message', function (Request $request) use ($app) {
-    $newId = (integer)$app['db']->fetchColumn("SELECT max(id) FROM messages") + 1;
-
-    return $app['db']->insert('messages', [
-        'ID'      => $newId,
-        'AUTHOR'  => $request->get('author'),
-        'MESSAGE' => $request->get('message'),
-    ]);
-});
-*/
-
 
 $app->run();
