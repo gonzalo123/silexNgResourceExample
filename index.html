@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="MessageService">
+<head>
+    <title>Angular Resource Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="MessageController">
+
+<h2>Message list <a href="#" ng-click="refresh()">refresh</a></h2>
+<ul>
+    <li ng-repeat="message in messages">
+        <a href="#" ng-click="deleteMessage($index, message.id)">delete</a>
+        #{{message.id}} - {{message.author}} - {{message.message}}
+        <a href="#" ng-click="selectMessage($index)">edit</a>
+    </li>
+</ul>
+
+<form>
+    <input type="text" ng-model="author" placeholder="author">
+    <input type="text" ng-model="message" placeholder="message">
+
+    <button ng-click="add()" ng-show='addMode'>Create</button>
+    <button ng-click="update()" ng-hide='addMode'>Update</button>
+    <button ng-click="cancel()" ng-hide='addMode'>Cancel</button>
+</form>
+
+</body>
+</html>

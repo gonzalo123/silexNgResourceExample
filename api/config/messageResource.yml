@@ -1,0 +1,24 @@
+getAll:
+  path: /resource
+  defaults: { _controller: 'Message\MessageController::getAllAction' }
+  methods:  [GET]
+
+getOne:
+  path: /resource/{id}
+  defaults: { _controller: 'Message\MessageController::getOneAction' }
+  methods:  [GET]
+
+deleteOne:
+  path: /resource/{id}
+  defaults: { _controller: 'Message\MessageController::deleteOneAction' }
+  methods:  [DELETE]
+
+addOne:
+  path: /resource
+  defaults: { _controller: 'Message\MessageController::addOneAction' }
+  methods:  [POST]
+
+editOne:
+  path: /resource/{id}
+  defaults: { _controller: 'Message\MessageController::editOneAction' }
+  methods:  [POST]

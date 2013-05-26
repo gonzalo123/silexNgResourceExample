@@ -1,0 +1,22 @@
+{
+    "name": "gonzalo123/silexNgResourceExample",
+    "description": "Example of Silex Resource provider for Angular js",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Gonzalo Ayuso",
+            "email": "gonzalo123@gmail.com"
+        }
+    ],
+    "require": {
+        "silex/silex": "1.0.*@dev",
+        "doctrine/dbal": "2.3.4",
+        "symfony/yaml":"v2.2.0",
+        "symfony/config":"v2.2.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "lib/"
+        }
+    }
+}
